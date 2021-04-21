@@ -36,6 +36,20 @@ vault status
 # vault ...
 ```
 
+```bash
+# // running:
+./test_hsm_transit_keygen.sh
+# // results in:
+  # {"errors":["1 error occurred:\n\t* failed to read random bytes: unable to fill provided buffer with entropy: failed to read random bytes: unable to fill provided buffer with entropy: error initializing session for reading random bytes: error logging in to HSM: pkcs11: 0x100: CKR_USER_ALREADY_LOGGED_IN\n\n"]}
+
+# // without 'entropy "seal" {' in /etc/vault.d/vault.hcl
+# // or disabling it does not result in any errors as per video demo
+sudo grep 'entropy "seal" {' -A2 /etc/vault.d/vault.hcl
+  # entropy "seal" {
+  #	mode = "augmentation"
+  #}
+```
+
 [![asciicast](https://asciinema.org/a/407558.svg)](https://asciinema.org/a/407558)
 
 ------

@@ -9,3 +9,7 @@ seal "pkcs11" {
 	#mechanism 	= "0x1087"  # // may be needed with some hw
 	#hmac_mechanism = "0x0251"  # // may be needed with some hw
 }
+
+entropy "seal" {
+	mode = "augmentation"
+}
