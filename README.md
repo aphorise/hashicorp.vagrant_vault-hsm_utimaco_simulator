@@ -2,7 +2,16 @@
 
 A mock `Vagrantfile` of [Utimaco HSM Simulator (aka Cryptoserver CP5)](https://hsm.utimaco.com/products-hardware-security-modules/hsm-simulators/securityserver-simulator/) intended for integration with [Vault](https://www.vaultproject.io/).
 
-:warning: **IMPORTANT**: You must register to obtain an evaluation of CP5 Simulator. :warning:
+:warning: **IMPORTANT**: You must [register with Utimaco](https://support.hsm.utimaco.com/) to obtain an evaluation of CP5 Simulator. :warning:
+
+### HARDWARE & SOFTWARE PREREQUISITES
+
+ - **RAM** **1-2**+ Gb Free minimum & more if using Consul (dont hit SWAP either or stay < 100Mb).
+ - **CPU** **1-2**+ Cores Free minimum (2 or more per vm) & more if using Consul.
+ - **Network** interface allowing IP assignment and interconnection in VirtualBox bridged mode for all instances.
+   - adjust `sNET='en0: Wi-Fi (Wireless)'` in **`Vagrantfile`** to match your system.
+ - [**Virtualbox**](https://www.virtualbox.org/) with [Virtualbox Guest Additions (VBox GA)](https://download.virtualbox.org/virtualbox/) & [**Vagrant**](https://www.vagrantup.com/) correctly installed.
+ - :lock: **IMPORTANT**: A [**Vault enterprise license**](https://www.hashicorp.com/products/vault/pricing/) is **needed** for both [HSM Support](https://www.vaultproject.io/docs/enterprise/hsm). **BY DEFAULT**: **not setting** a valid license (in `vault_license.txt`) is possible for **trail / evaluation purposes only** using older **unsupported** versions of **1.7.10** with a limit of **29 minutes** per node (warning messages should be apparent throughout before auto-sealing after). :lock:
 
 
 ## Usage & Workflow

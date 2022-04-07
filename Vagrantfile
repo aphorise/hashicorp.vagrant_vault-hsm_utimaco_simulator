@@ -1,10 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-VV1='VAULT_VERSION='+'1.7.0+ent.hsm'  # VV1='' to Install Latest OSS
+VV1='VAULT_VERSION='+'1.7.10+ent.hsm'  # VV1='' to Install Latest OSS
 CLUSTERA_VAULT_NAME = 'hsm1'  # // Vault A Cluster Name
 
-#sNET='en0: Wi-Fi (Wireless)'  # // network adaptor to use for bridged mode
-sNET='en7: USB 10/100/1000 LAN'  # // network adaptor to use for bridged mode
+sNET='en0: Wi-Fi'  # // network adaptor to use for bridged mode
+#sNET='en6: USB 10/100/1000 LAN'  # // network adaptor to use for bridged mode
 sVUSER='vagrant'  # // vagrant user
 sHOME="/home/#{sVUSER}"  # // home path for vagrant user
 sPTH='cc.os.user-input'  # // path where scripts are expected
